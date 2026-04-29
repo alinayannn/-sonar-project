@@ -1,0 +1,19 @@
+name: SonarCloud Scan
+on:
+  push:
+    branches: [ main ]
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=alinayannn
+            -Dsonar.projectKey=alinayannn_-sonar-project
