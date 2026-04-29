@@ -244,4 +244,4 @@ if __name__ == "__main__":
     try:
         bot.run()
     finally:
-        db.close()
+        db.close()# Refactored version - Cognitive Complexity reduced
